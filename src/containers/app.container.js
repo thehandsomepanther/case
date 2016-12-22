@@ -4,8 +4,6 @@ const fs = require('browserify-fs')
 class AppContainer extends React.Component {
   constructor(props) {
     super(props)
-    console.log(__dirname);
-    console.log(`../public${props.dir}`);
     this.files = fs.readdir('/', function(err, files) {
       console.log(err);
       console.log(files);
