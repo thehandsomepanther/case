@@ -16,7 +16,7 @@ class AppContainer extends React.Component {
     // })
 
     return (
-      <div>lol</div>
+      <div>smol</div>
     )
   }
 }

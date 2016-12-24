@@ -17,7 +17,10 @@ function createWindow() {
 
 app.on('ready', () => {
   var fonts = fontManager.getAvailableFontsSync()
-  
+
+  fs.ensureDirSync('./public/json/')
+  fs.writeJsonSync('./public/json/fonts.json', fonts)
+
   createWindow()
 })
 
