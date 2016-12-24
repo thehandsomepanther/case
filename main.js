@@ -1,7 +1,6 @@
 const { app, dialog, BrowserWindow } = require('electron')
 const fs = require('fs-extra')
 const fontManager = require('font-manager')
-const { Directory } = require('./directory')
 require('electron-reload')(__dirname)
 
 let mainWindow
@@ -18,8 +17,8 @@ function createWindow() {
 app.on('ready', () => {
   var fonts = fontManager.getAvailableFontsSync()
 
-  fs.ensureDirSync('./public/json/')
-  fs.writeJsonSync('./public/json/fonts.json', fonts)
+  fs.ensureDirSync('./public/js/json/')
+  fs.writeJsonSync('./public/js/json/fonts.json', fonts)
 
   createWindow()
 })

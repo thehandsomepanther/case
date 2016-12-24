@@ -1,9 +1,9 @@
 import React from 'react'
 import FontList from './FontList'
 
-const App = () => (
+const App = ({fonts}) => (
   <div>
-    <FontList />
+    <FontList fonts={fonts} />
   </div>
 )
 

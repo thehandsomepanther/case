@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import Font from './Font'
 
-const FontList = (fonts) => (
+const FontList = ({fonts}) => (
   <ul>
     { fonts.map(font =>
         <Font
           key={font.id}
+          font={font}
           {...font}
         />
     )}
@@ -15,7 +16,7 @@ const FontList = (fonts) => (
 FontList.propTypes = {
   fonts: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired
+    path: PropTypes.string.isRequired
   }).isRequired).isRequired
 }
 
