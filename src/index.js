@@ -7,43 +7,20 @@ import reducer from './reducers'
 
 const store = createStore(reducer)
 
-var fonts = [
-  {
-    "id": 0,
-    "path": "/System/Library/Fonts/Optima.ttc",
-    "postscriptName": "Optima-BoldItalic",
-    "family": "Optima",
-    "style": "Bold Italic",
-    "weight": 700,
-    "width": 5,
-    "italic": true,
-    "monospace": false
-  },
-  {
-    "id": 1,
-    "path": "/Library/Fonts/STIXSizOneSymBol.otf",
-    "postscriptName": "STIXSizeOneSym-Bold",
-    "family": "STIXSizeOneSym",
-    "style": "Bold",
-    "weight": 700,
-    "width": 5,
-    "italic": false,
-    "monospace": false
-  }
-]
+var library
 
 var req = new XMLHttpRequest();
 req.overrideMimeType('application/json')
-req.open('GET', './js/json/fonts.json', true)
+req.open('GET', './js/json/library.json', false)
 req.send(null)
 
-req.onreadystatechange = function(text) {
-  fonts = JSON.parse(text.currentTarget.responseText)
+if (req.status == '200') {
+  library = JSON.parse(req.responseText)
 }
 
 render(
   <Provider store={store}>
-    <App fonts={fonts} />
+    <App library={library} />
   </Provider>,
   document.getElementById('app')
 )

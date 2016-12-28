@@ -1,9 +1,9 @@
 import React from 'react'
-import FontList from './FontList'
+import FaceList from './FaceList'
 
-const App = ({fonts}) => (
+const App = ({library}) => (
   <div>
-    <FontList fonts={fonts} />
+    <FaceList library={library} />
   </div>
 )
 

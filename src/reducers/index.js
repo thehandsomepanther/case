@@ -1,20 +1,21 @@
 import { createStore } from 'redux'
 
-const font = (state, action) => {
+const face = (state, action) => {
   switch (action.type) {
-    case 'ADD_FONT':
+    case 'ADD_FACE':
       return {
         id: action.id,
         path: action.path
       }
+      break
     default:
       return state
   }
 }
 
-const fonts = (state = [], action) => {
+const faces = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_FONT':
+    case 'ADD_FACE':
       return [
         ...state,
         font(undefined, action)
@@ -24,4 +25,4 @@ const fonts = (state = [], action) => {
   }
 }
 
-export default fonts
+export default faces
